@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.CheckBox
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        Glide.with(this).load(R.drawable.title).into(imageView)
+
+        tvSonuc.text= savedInstanceState?.getString("sonuc")
 
         cbVenus.setOnClickListener(this)
         cbMars.setOnClickListener(this)
@@ -54,6 +58,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     }
 
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putString("sonuc", tvSonuc.text.toString())
+
+    }
 
     fun poundToKilo(pound : Double) : Double{
 

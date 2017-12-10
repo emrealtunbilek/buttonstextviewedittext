@@ -15,12 +15,13 @@
         android:layout_marginTop="16dp"
         android:fontFamily="monospace"
         android:text="@string/app_baslik"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/etKilo"
@@ -29,42 +30,35 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background"
         android:ems="10"
+        android:fontFamily="monospace"
         android:hint="@string/kilo_giris_hint"
         android:inputType="numberDecimal"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbMars" />
 
-    <Button
-        android:id="@+id/btnHesapla"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/holo_orange_dark"
-        android:text="Hesapla"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etKilo" />
-
     <TextView
         android:id="@+id/tvSonuc"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="monospace"
-        android:text="SONUC"
-        android:textSize="30sp"
+        android:fontFamily="casual"
+        android:textColor="@color/colorAccent"
+        android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHesapla" />
+        app:layout_constraintTop_toBottomOf="@+id/etKilo" />
 
     <CheckBox
         android:id="@+id/cbMars"
@@ -81,21 +75,29 @@
         android:id="@+id/cbVenus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Venüs"
         app:layout_constraintEnd_toStartOf="@+id/cbJupiter"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cbMars"
-        app:layout_constraintTop_toBottomOf="@+id/tvBaslik" />
+        app:layout_constraintTop_toTopOf="@+id/cbMars" />
 
     <CheckBox
         android:id="@+id/cbJupiter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Jüpiter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cbVenus"
-        app:layout_constraintTop_toBottomOf="@+id/tvBaslik" />
+        app:layout_constraintTop_toTopOf="@+id/cbMars" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
 </android.support.constraint.ConstraintLayout>
